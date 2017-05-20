@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+### Workspace Utilities Container ###########################
+
+    nodejs:
+        image: node:7.10.0-alpine
+        command: sleep 7200
+        volumes:
+            - ./:/usr/src/app
