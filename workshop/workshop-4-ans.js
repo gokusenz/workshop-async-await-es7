@@ -8,13 +8,10 @@ async function fetchFromGitHub(endpoint) {
 }
 
 async function showUserAndRepos(handle) {
-  const result = await Promise.all([
+  const [user, repos] = await Promise.all([
     fetchFromGitHub(`/users/${handle}`),
     fetchFromGitHub(`/users/${handle}/repos`)
   ]);
-
-  const user = result[0];
-  const repos = result[1];
 
   console.log(user.name);
   console.log(`${repos.length} repos`);
